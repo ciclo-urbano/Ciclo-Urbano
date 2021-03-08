@@ -27,7 +27,7 @@ For this project we worked with West Town Bikes, a Chicago area youth-focused no
 
 ## Component Hierarchy
 
-
+https://whimsical.com/bike-shop-component-hierarchy-Qce9EyUxakGVpkLiAsjPgi
 
 ## Schema
 
