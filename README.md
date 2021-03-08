@@ -59,17 +59,19 @@ const User = new Schema({
 
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Full Frontend CRUD functionality
+- Full Backend CRUD functionality
+- User authorization implemented (site admins can sign up/sign in)
+- Landing Page Carousel displays featured bikes
+- Responsive design
+- Navigation bar
+- Search bar 
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Ability for users to "like" their favorite bikes
+- Additional filtering options for displayed results (filter by bike size and price)
 
 ## Project Tracker
 
