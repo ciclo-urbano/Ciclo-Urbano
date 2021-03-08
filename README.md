@@ -23,15 +23,15 @@ const bikeSchema = new Schema({
     category: String,
     description: String,
     size: String,
-    is-sold: Boolean,
-    on-hold: Boolean,
+    isSold: Boolean,
+    onHold: Boolean,
     });
  
 const userSchema = new Schema({
     email: String,
     password: String,
-    name-first: String,
-    name-last: String,
+    firstName: String,
+    lastName: String,
     admin: Boolean,
     });
 
