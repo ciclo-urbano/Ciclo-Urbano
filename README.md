@@ -78,4 +78,4 @@ https://github.com/orgs/ciclo-urbano/projects/1
 
 ## Team Expectations:
 
-
+https://docs.google.com/document/d/1YVS7fB8tx3OwuwKuecyFbrRGISdLhzSySwKXC2LJNgY/edit
