@@ -5,11 +5,28 @@
 
 For this project we worked with West Town Bikes, a Chicago area youth-focused nonprofit, to create a digital inventory of bikes for Ciclo Urbano, their brick-and-mortar storefront. Our application allows users to browse in-stock bikes without having to visit the shop in person or call, which were the only previous ways. 
 
-## Wireframes
+## Mockups
 
+### Home
+![alt text](https://i.imgur.com/1jsouiKm.png "Mockup - Home")
 
+### Bikes
+![alt text](https://i.imgur.com/Cc0JBrFm.png "Mockup - Bikes")
+
+### Bike Details
+![alt text](https://i.imgur.com/7LD4dlom.png "Mockup - Details")
+
+### Login/Create User
+![alt text](https://i.imgur.com/QuWea8Em.png "Mockup - Login")
+
+### Add Bike
+![alt text](https://i.imgur.com/hp8AWZOm.png "Mockup - Add")
+
+### Edit Bike
+![alt text](https://i.imgur.com/XyINdn6m.png "Mockup - Edit")
 
 ## Component Hierarchy
+
 
 
 ## Schema
@@ -17,17 +34,18 @@ For this project we worked with West Town Bikes, a Chicago area youth-focused no
 
 ```jsx
 
-const bikeSchema = new Schema({
+const Bike = new Schema({
     model: String,
     make: String,
     category: String,
     description: String,
+    price: String,
     size: String,
     isSold: Boolean,
     onHold: Boolean,
     });
  
-const userSchema = new Schema({
+const User = new Schema({
     email: String,
     password: String,
     firstName: String,
