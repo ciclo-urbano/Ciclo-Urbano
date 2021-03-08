@@ -15,39 +15,26 @@ For this project we worked with West Town Bikes, a Chicago area youth-focused no
 ## Schema
 
 
-```json
-{
-    "records": [
-        {
-            "id": "recONRzIUTuZ5lXaF",
-            "fields": {
-                "author": "Liz Yrineo",
-                "setup": "Why did the tomato turn red?",
-                "punchline": "Because it saw the salad dressing!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
-        },
-        {
-            "id": "rec3oYZ5Tp0AIDsKe",
-            "fields": {
-                "author": "Rachel Moskowitz",
-                "setup": "What did the green grape say to the red grape?",
-                "punchline": "Breathe, idiot, breathe!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
-        },
-        {
-            "id": "recA34tOaoE1IVeC1",
-            "fields": {
-                "author": "Gary Grant",
-                "setup": "How do you make holy water?",
-                "punchline": "You boil the hell out of it!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
-        }
-    ],
-    "offset": "recA34tOaoE1IVeC1"
-}
+```jsx
+
+const bikeSchema = new Schema({
+    model: String,
+    make: String,
+    category: String,
+    description: String,
+    size: String,
+    is-sold: Boolean,
+    on-hold: Boolean,
+    });
+ 
+const userSchema = new Schema({
+    email: String,
+    password: String,
+    name-first: String,
+    name-last: String,
+    admin: Boolean,
+    });
+
 ```
 
 ### MVP/PostMVP
