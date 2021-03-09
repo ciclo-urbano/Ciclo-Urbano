@@ -10,7 +10,8 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
   <>
-    <NavLink className="link" to="/sign-in">Sign In/Sign Up</NavLink>
+    <NavLink className="link" to="/sign-in">Sign In</NavLink>
+    <NavLink className='link' to='/sign-up'>Sign Up</NavLink>
   </>
 )
 
@@ -27,7 +28,7 @@ const Nav = ({ user }) => {
   return (
     <nav>
       <div className='nav'>
-        <NavLink className="logo" to="/"><img src='http://westtownbikes.org/wp-content/uploads/2018/08/cropped-WTB_Logo-1.jpg' alt='logo' /></NavLink>
+        <NavLink className="logo" to="/"><img src='http://westtownbikes.org/wp-content/uploads/2018/08/WTB-Ciclo-Urbano-Yellow-logo.jpg' alt='logo' /></NavLink>
         <div className="links">
           {user && <div className="link greeting">Hello, {user.username}</div>}
           {alwaysOptions}
