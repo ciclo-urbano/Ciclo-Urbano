@@ -58,7 +58,7 @@ const deleteBike = async (req, res) => {
     const { id } = req.params;
     const deleted = await Bike.findByIdAndDelete(id);
     if (deleted) {
-      return res.status(200).send("Bike deleted");
+      return res.status(200).send("Bicycle deleted, with extreme prejudice");
     }
     throw new Error("Bike not found");
   } catch (error) {

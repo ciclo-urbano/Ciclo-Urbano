@@ -35,6 +35,75 @@ beforeAll(async () => {
   console.log("Created 50 fake test bikes for our fake test ride!");
 });
 
+// this variable will be used later in our tests
+let bikeId;
+
+// projects api tests
+describe("Test the express routes for our bikes endpoints", () => {
+  // test the GET express route for the '/api/bikes' path
+  it("should get all bikes in the db", async (done) => {
+    const res = await request(app).get(`/api/bikes`);
+    // test that the status code is 200 - successful
+    expect(res.statusCode).toEqual(200);
+    // test that the response object has an _id property
+    expect(res.body[0]).toHaveProperty("_id");
+    // Save the _id value for later use with other tests
+    bikeId = res.body[0]._id;
+    // call the done() callback function, so that jest can proceed to the next test
+    done();
+  }),
+    it("should show a specific bike", async (done) => {
+      // create a GET request with SuperTest using the projectId from the previous POST test
+      const res = await request(app).get(`/api/bikes/${bikeId}`);
+      expect(res.statusCode).toEqual(200);
+      expect(res.body).toHaveProperty("_id");
+      done();
+    }),
+    // test the POST express route for the '/api/projects' path
+    it("should CREATE a new bike", async (done) => {
+      // create a POST request with SuperTest
+      const res = await request(app).post(`/api/bikes`).send({
+        model: "Karakoram",
+        make: "GT",
+        category: "Mountain",
+        description: "bitchin' triple triangle",
+        price: "$300",
+        size: "60cm",
+        image_url: "www.yeppers.com",
+        isSold: false,
+        onHold: false,
+      });
+      // test that the POST request was successful
+      expect(res.statusCode).toEqual(201);
+      expect(res.body).toHaveProperty("_id");
+      // call the done() callback function, so that jest can proceed to the next test
+      done();
+    }),
+    it("should update a bike", async (done) => {
+      // create a PUT request with SuperTest using the projectId from the POST test
+      const res = await request(app).put(`/api/bikes/${bikeId}`).send({
+        model: "Karakoram",
+        make: "GT",
+        category: "Mountain",
+        description: "bitchin' triple triangle",
+        price: "$300",
+        size: "60cm",
+        image_url: "www.yeppers.com",
+        isSold: false,
+        onHold: false,
+      });
+      expect(res.statusCode).toEqual(200);
+      expect(res.body).toHaveProperty("_id");
+      done();
+    }),
+  it("should delete a bike", async (done) => {
+    const res = await request(app).del(`/api/bikes/${bikeId}`);
+    expect(res.statusCode).toEqual(200);
+    expect(res.text).toEqual("Bicycle deleted, with extreme prejudice");
+    done();
+  });
+});
+
 afterAll(async () => {
   // after all tests are complete delete the test database
   await mongoose.connection.db.dropDatabase();
