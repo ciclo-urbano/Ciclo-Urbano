@@ -8,8 +8,7 @@ const getToken = () => {
 
 const api = axios.create({
     baseURL: process.env.NODE_ENV === 'production'
-        ? 'https://sei-products-api.herokuapp.com/api'
-        // PLACEHOLDER UNTIL OUR BACKEND IS DEPLOYED -- CHANGE LATER
+        ? 'https://ciclo-urbano.herokuapp.com/api/bikes'
         : 'http://localhost:3000/api'
 })
 
