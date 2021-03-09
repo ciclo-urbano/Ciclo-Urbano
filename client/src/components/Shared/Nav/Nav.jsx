@@ -37,3 +37,5 @@ const Nav = ({ user }) => {
     </nav>
   )
 }
+
+export default Nav;
