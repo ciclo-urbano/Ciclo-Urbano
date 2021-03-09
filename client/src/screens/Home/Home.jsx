@@ -4,11 +4,11 @@ import Layout from '../../components/Shared/Layout/Layout'
 
 const Home = (props) => {
   return (
-    
+    <Layout>
       <div className="home">
         Test test
       </div>
-    
+      </Layout>
   )
 }
 
