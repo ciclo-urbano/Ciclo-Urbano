@@ -71,7 +71,7 @@ const SignUp = (props) => {
                     type="text"
                     name="firstName"
                     value={firstName}
-                    placeholder="Enter First Name"
+                    placeholder="First Name"
                     onChange={handleChange}
           />
            <label>Last Name</label>
@@ -80,7 +80,7 @@ const SignUp = (props) => {
                     type="text"
                     name="lastName"
                     value={lastName}
-                    placeholder="Enter Last Name"
+                    placeholder="Last Name"
                     onChange={handleChange}
                 />
                 <label>Email address</label>
@@ -89,7 +89,7 @@ const SignUp = (props) => {
                     type="email"
                     name="email"
                     value={email}
-                    placeholder="Enter email"
+                    placeholder="Email"
                     onChange={handleChange}
                 />
                 <label>Password</label>
