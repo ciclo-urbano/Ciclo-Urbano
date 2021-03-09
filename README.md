@@ -34,16 +34,20 @@ https://whimsical.com/bike-shop-component-hierarchy-Qce9EyUxakGVpkLiAsjPgi
 
 ```jsx
 
-const Bike = new Schema({
-    model: String,
-    make: String,
-    category: String,
-    description: String,
-    price: String,
-    size: String,
-    isSold: Boolean,
-    onHold: Boolean,
-    });
+const bikeSchema = new Schema(
+  {
+    model: { type: String, required: true },
+    make: { type: String, required: true },
+    category: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: String, required: true },
+    size: { type: String, required: true },
+    image_url: { type: String, required: true },
+    isSold: { type: Boolean, required: true },
+    onHold: { type: Boolean, required: true },
+  },
+  { timestamps: true }
+);
  
 const User = new Schema({
     email: String,
