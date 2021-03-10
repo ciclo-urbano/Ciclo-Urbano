@@ -27,7 +27,7 @@ const Bikes = (props) => {
   const handleSubmit = event => event.preventDefault()
 
   const bikesJSX = queriedBikes.map((bike, index) =>
-    <Bike _id={bike._id} model={bike.model} image_url={bike.image_url} price={bike.price} key={index} />
+    <Bike _id={bike._id} model={bike.model} imageURL={bike.imageURL} price={bike.price} key={index} />
   )
 
   return (
