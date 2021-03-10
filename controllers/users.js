@@ -3,11 +3,10 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const db = require("../db/connection");
 
-
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const SALT_ROUNDS = 11;
-const TOKEN_KEY = process.env.TOKEN_KEY;
+const TOKEN_KEY = "iamkeyhi";
 
 const signUp = async (req, res) => {
   try {
@@ -19,6 +18,7 @@ const signUp = async (req, res) => {
       firstName,
       lastName,
     });
+    console.log(user);
 
     await user.save();
 
@@ -33,14 +33,24 @@ const signUp = async (req, res) => {
   }
 };
 
-const signIn = async (credentials) => {
+const signIn = async (req, res) => {
   try {
-    const resp = await api.post("/sign-in", credentials);
-    localStorage.setItem("token", resp.data.token);
-    const user = jwtDecode(resp.data.token);
-    return user;
+    const { username, password } = req.body;
+    const user = await User.findOne({ username: username });
+    // pull the user out of database and store it in the variable
+    // bcrypt will match and has ability to detect the hashes
+    if (await bcrypt.compare(password, user.password_digest)) {
+      const payload = {
+        username: user.username,
+        email: user.email,
+      };
+      const token = jwt.sign(payload, TOKEN_KEY);
+      res.status(201).json({ token });
+    } else {
+      res.status(401).send("Invalid Credentials");
+    }
   } catch (error) {
-    throw error;
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -63,4 +73,4 @@ module.exports = {
   signUp,
   signIn,
   verify,
-}
+};

@@ -87,7 +87,7 @@ const SignUp = (props) => {
                 <label>Email</label>
                 <input
                     required
-                    type="email"
+                    type="text"
                     name="email"
                     value={email}
                     placeholder="Email"

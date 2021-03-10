@@ -1,12 +1,12 @@
-const { Router } = require('express')
-const bikesRouter = require('./bikes');
-const usersRouter = require('./users');
+// const { Router } = require('express')
+// const bikesRouter = require('./bikes');
+// const usersRouter = require('./users');
 
-const router = Router();
+// const router = Router();
 
-router.get('/', (req, res) => res.send('This is the api root!'))
+// router.get('/', (req, res) => res.send('This is the api root!'))
 
-router.use('/', usersRouter);
-router.use('/bikes', bikesRouter);
+// router.use('/', usersRouter);
+// router.use('/bikes', bikesRouter);
 
-module.exports = router
+// module.exports = router
