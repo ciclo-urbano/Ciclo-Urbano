@@ -11,20 +11,18 @@ const TOKEN_KEY = process.env.TOKEN_KEY;
 
 const signUp = async (req, res) => {
   try {
-    const { email, password, firstName, lastName, admin } = req.body;
+    const { email, password, firstName, lastName } = req.body;
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
     const user = new User({
       email,
       password_digest,
       firstName,
       lastName,
-      admin,
     });
 
     await user.save();
 
     const payload = {
-      username: user.username,
       email: user.email,
     };
 
@@ -61,3 +59,8 @@ const verify = async (req, res) => {
 // challenge mode
 // const changePassword = async (req, res) => {};
 
+module.exports = {
+  signUp,
+  signIn,
+  verify,
+}
