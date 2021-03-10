@@ -31,12 +31,10 @@ const Bikes = (props) => {
 
   return (
     <Layout user={props.user}>
-    <>
-      {/* <Search onSubmit={handleSubmit} onChange={handleSearch} /> */}
+      <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <div className="bikes">
         {bikesJSX}
       </div>
-    </>
     </Layout>
   )
 }
