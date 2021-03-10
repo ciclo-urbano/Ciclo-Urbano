@@ -35,13 +35,12 @@ const signUp = async (req, res) => {
 
 const signIn = async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username: username });
+    const { email, password } = req.body;
+    const user = await User.findOne({ email: email });
     // pull the user out of database and store it in the variable
     // bcrypt will match and has ability to detect the hashes
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
-        username: user.username,
         email: user.email,
       };
       const token = jwt.sign(payload, TOKEN_KEY);
