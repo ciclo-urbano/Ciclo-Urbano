@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const controllers = require('../controllers/bikes');
+const restrict = require('../helpers/restrict')
 
 const router = Router();
 
