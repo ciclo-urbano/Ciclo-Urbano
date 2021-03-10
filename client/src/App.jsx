@@ -43,10 +43,14 @@ const App = () => {
           <Bikes user={user} />
         </Route>
         <Route path="/add-bike">
-          {user ? <BikeAdd user={user} /> : <Redirect to="/sign-up" />}
+          {/* {user ? */}
+            <BikeAdd user={user} />
+            {/* // : <Redirect to="/sign-up" />} */}
         </Route>
         <Route exact path="/bikes/:id/edit">
-          {user ? <BikeEdit user={user} /> : <Redirect to='/' />}
+          {user ?
+            <BikeEdit user={user} />
+            : <Redirect to='/' />}
         </Route>
         <Route exact path="/bikes/:id">
           <BikeDetail user={user} />
