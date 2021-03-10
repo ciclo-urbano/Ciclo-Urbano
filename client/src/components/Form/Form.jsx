@@ -21,8 +21,8 @@ function Form(props) {
   useEffect(() => {
     if (props.id) {
       const fetchBike = async () => {
-        const bike = await getBike(props.id);
-        setBike(bike);
+        const theBike = await getBike(props.id);
+        setBike(theBike);
       }
       fetchBike();
     }
@@ -43,6 +43,7 @@ function Form(props) {
       setCreated(theBike)
     } else {
       const theBike = await createBike(bike);
+      console.log(theBike)
       setCreated(theBike)
     }
   }
