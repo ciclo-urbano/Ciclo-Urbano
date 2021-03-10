@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import './Bikes.css'
 import Bike from '../../components/Bike/Bike'
 import Search from '../../components/Search/Search'
@@ -32,6 +33,7 @@ const Bikes = (props) => {
   return (
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
+      <Link to='/add-bike'>Add Bike</Link>
       <div className="bikes">
         {bikesJSX}
       </div>

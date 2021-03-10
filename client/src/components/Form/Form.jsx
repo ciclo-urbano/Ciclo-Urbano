@@ -82,10 +82,10 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-model"
-        placeholder="Model"
-        value={bike.model}
-        name="model"
+        className="input-color"
+        placeholder="Color"
+        value={bike.color}
+        name="color"
         required
         onChange={handleChange}
       />
