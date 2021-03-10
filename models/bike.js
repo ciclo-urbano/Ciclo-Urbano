@@ -9,7 +9,7 @@ const bikeSchema = new Schema(
     description: { type: String, required: true },
     price: { type: String, required: true },
     size: { type: String, required: true },
-    image_url: { type: String, required: true },
+    imageURL: { type: String, required: true },
     isSold: { type: Boolean, required: true },
     onHold: { type: Boolean, required: true },
   },
