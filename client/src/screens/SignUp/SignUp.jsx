@@ -37,6 +37,7 @@ const SignUp = (props) => {
                 setForm({
                   firstName: '',
                   lastName: '',
+                  email: '',
                     password: '',
                     passwordConfirmation: '',
                     isError: true,
