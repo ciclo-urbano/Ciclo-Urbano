@@ -25,7 +25,7 @@ function BikeDetail(props) {
   return (
     <Layout>
       <div className='bike-detail'>
-        <img className='bike-detail-image' src={bike.image_url} alt={bike.model} />
+        <img className='bike-detail-image' src={bike.imageURL} alt={bike.model} />
         <div className='detail-text'>
           <div className='bike-detail-model'>{bike.model}</div>
           <div className='bike-detail-price'>{bike.price}</div>
