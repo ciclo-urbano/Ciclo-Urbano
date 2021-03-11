@@ -15,3 +15,10 @@
 .bike:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
 }
+
+.bike-image {
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
