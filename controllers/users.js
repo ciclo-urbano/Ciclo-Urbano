@@ -6,7 +6,7 @@ const db = require("../db/connection");
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const SALT_ROUNDS = 11;
-const TOKEN_KEY = "iamkeyhi";
+const TOKEN_KEY = process.env.TOKEN_KEY || 'areallygreatlongkey';
 
 const signUp = async (req, res) => {
   try {
@@ -35,13 +35,14 @@ const signUp = async (req, res) => {
 
 const signIn = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, firstName } = req.body;
     const user = await User.findOne({ email: email });
     // pull the user out of database and store it in the variable
     // bcrypt will match and has ability to detect the hashes
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         email: user.email,
+        firstName: user.firstName
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       res.status(201).json({ token });

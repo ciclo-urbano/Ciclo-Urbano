@@ -3,7 +3,6 @@ import { getBike, updateBike, createBike } from '../../services/bikes.js';
 import './Form.css'
 
 function Form(props) {
-  const [created, setCreated] = useState(false)
   const [bike, setBike] = useState(
     {
       model: '',
@@ -21,8 +20,8 @@ function Form(props) {
   useEffect(() => {
     if (props.id) {
       const fetchBike = async () => {
-        const bike = await getBike(props.id);
-        setBike(bike);
+        const theBike = await getBike(props.id);
+        setBike(theBike);
       }
       fetchBike();
     }
@@ -40,10 +39,11 @@ function Form(props) {
     e.preventDefault();
     if (props.id) {
       const theBike = await updateBike(props.id, bike);
-      setCreated(theBike)
+      props.setUpdated(theBike)
     } else {
       const theBike = await createBike(bike);
-      setCreated(theBike)
+      console.log(theBike)
+      props.setUpdated(theBike)
     }
   }
 
