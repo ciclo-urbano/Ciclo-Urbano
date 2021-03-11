@@ -10,7 +10,7 @@
   flex-direction: column;
   max-width:420px; 
   margin:50px auto;
-  background-color: rgba(34,34,34,.36);
+  background-color: #F8E8DD;
   border: 20px solid transparent;
   border-radius: 5px;
   border-image: linear-gradient(to bottom, #EDDD53 0%, #5362ED 100%);
@@ -23,7 +23,7 @@
 }
 
 .input {
-  color: white;
+  color: #5362ED;
   font-weight:500;
   font-size: 18px;
   border-radius: 5px;
@@ -44,7 +44,7 @@
   border-radius:5px;
   border:0;
   cursor:pointer;
-  color:white;
+  color:#EDDD53;
   font-size:24px;
   padding-top:10px;
   padding-bottom:10px;
@@ -52,4 +52,7 @@
   margin-top:-4px;
   font-weight:700;
 }
-[type="submit"]:hover { background:#CC4949; }
+[type="submit"]:hover { 
+  background:#EDDD53; 
+  color: #5362ED;
+}
