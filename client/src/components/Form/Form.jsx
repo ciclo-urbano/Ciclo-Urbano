@@ -48,9 +48,10 @@ function Form(props) {
   }
 
   return (
+    // <div className="bike-form-container">
     <form className="bike-form" onSubmit={handleSubmit}>
       <input
-        className="input-model"
+        className="input input-model"
         placeholder="Model"
         value={bike.model}
         name="model"
@@ -58,7 +59,7 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-make"
+        className="input input-make"
         placeholder="Make"
         value={bike.make}
         name="make"
@@ -66,7 +67,7 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-category"
+        className="input input-category"
         placeholder="Category"
         value={bike.category}
         name="category"
@@ -74,7 +75,7 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-description"
+        className="input input-description"
         placeholder="Description"
         value={bike.description}
         name="description"
@@ -82,7 +83,7 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-color"
+        className="input input-color"
         placeholder="Color"
         value={bike.color}
         name="color"
@@ -90,7 +91,7 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-price"
+        className="input input-price"
         placeholder="Price"
         value={bike.price}
         name="price"
@@ -98,7 +99,7 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-size"
+        className="input input-size"
         placeholder="Size"
         value={bike.size}
         name="size"
@@ -106,7 +107,7 @@ function Form(props) {
         onChange={handleChange}
       />
       <input
-        className="input-url"
+        className="input input-url"
         placeholder="Image URL"
         value={bike.imageURL}
         name="imageURL"
@@ -114,7 +115,8 @@ function Form(props) {
         onChange={handleChange}
       />
       <button type='submit' className='submit-button'>{ props.id ? 'Save Changes' : 'Add'}</button>
-    </form>
+      </form>
+      // </div>
   )
 }
 
