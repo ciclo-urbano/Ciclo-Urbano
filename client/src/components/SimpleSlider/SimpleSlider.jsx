@@ -29,8 +29,8 @@ export default function SimpleSlider() {
     <Slider {...settings}>
       {bikes.reverse().map((bike, index) =>
         index < 5 ?
-          <div className="carousel">
-            <BikeCard id={bike._id} model={bike.model} imageURL={bike.imageURL} key={index} />
+          <div key={index} className="carousel">
+            <BikeCard id={bike._id} model={bike.model} imageURL={bike.imageURL}  />
             </div>
           : null)}
     </Slider>
