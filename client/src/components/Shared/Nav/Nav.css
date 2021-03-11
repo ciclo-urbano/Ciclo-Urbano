@@ -13,7 +13,7 @@ nav {
   flex: 1;
   position: fixed;
   width: 100%;
-  background-color: rgba(51, 51, 51, 0.609);
+  background-color:  #b0ab99c2;
   z-index: 1;
   top: 0;
   left: 0;
@@ -48,7 +48,7 @@ nav a:hover{
 
 nav a{
   text-decoration: none;
-  color:  #F8E8DD;
+  color:  black;
   flex: 2;
   max-width: 60vw;
   align-items: center;
