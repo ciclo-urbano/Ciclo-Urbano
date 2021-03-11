@@ -3,7 +3,6 @@ import { getBike, updateBike, createBike } from '../../services/bikes.js';
 import './Form.css'
 
 function Form(props) {
-  const [created, setCreated] = useState(false)
   const [bike, setBike] = useState(
     {
       model: '',
@@ -40,11 +39,11 @@ function Form(props) {
     e.preventDefault();
     if (props.id) {
       const theBike = await updateBike(props.id, bike);
-      setCreated(theBike)
+      props.setUpdated(theBike)
     } else {
       const theBike = await createBike(bike);
       console.log(theBike)
-      setCreated(theBike)
+      props.setUpdated(theBike)
     }
   }
 
