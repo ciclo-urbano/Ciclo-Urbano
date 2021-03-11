@@ -19,6 +19,9 @@ const alwaysOptions = (
   <>
     <NavLink className='link' to='/'>Home</NavLink>
     <NavLink className="link" to="/bikes">Bikes</NavLink>
+    <a href='http://westtownbikes.org/events/' target="_blank">Events</a>
+    <a href='http://westtownbikes.org/youth-rograms/' target="_blank">YouthPrograms</a>
+    <a href='http://westtownbikes.org/ciclo-urbano/' target='_blank'>Visit</a>
   </>
 )
 
@@ -29,10 +32,9 @@ const Nav = ({ user }) => {
     <nav>
       <div className='nav'>
         <NavLink className="logo" to="/"><img src='http://westtownbikes.org/wp-content/uploads/2018/08/WTB-Ciclo-Urbano-Yellow-logo.jpg' alt='logo' /></NavLink>
+        {user && <div className="link-greeting">Hello, {user.firstName}</div>}
         <div className="links">
-          {user && <div className="link-greeting">Hello, {user.firstName}</div>}
-          {alwaysOptions}
-          {user ? authenticatedOptions : unauthenticatedOptions}
+          {alwaysOptions}{user ? authenticatedOptions : unauthenticatedOptions}
         </div>
       </div>
     </nav>

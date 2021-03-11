@@ -1,0 +1,24 @@
+.bike {
+  margin: 8px 12px;
+  background-color: #F7EBE8;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 8px;
+  transition: .3s;
+}
+
+.bike a {
+  text-decoration: none;
+  color:black;
+  font-family: 'Roboto', sans serif;
+}
+
+.bike:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+}
+
+.bike-image {
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
