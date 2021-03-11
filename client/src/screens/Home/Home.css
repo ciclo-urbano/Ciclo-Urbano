@@ -1,0 +1,43 @@
+.welcome-container {
+  display: flex;
+  flex-direction: row;
+  max-height: 400px;
+}
+
+.welcome-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F8E8DD;
+  width: 50vw;
+}
+
+.welcome-header p {
+  font-size: 30px;
+  font-family: "Roboto";
+  text-align: center;
+}
+
+.community {
+  font-size: 20px;
+  font-family: "Roboto";
+  text-align: center;
+}
+
+.welcome-picture {
+  display: flex;
+  align-items: center;
+}
+
+.welcome-picture img {
+  width: 50vw;
+  height: 400px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.featured-header {
+  font-size: 25px;
+  font-family: "Roboto";
+  text-align: center;
+}
