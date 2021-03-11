@@ -33,7 +33,7 @@ function Filter(props) {
       setResults(lowest);
     } else if (priceMedium) {
       const middlest = props.bikes.filter((bike) => {
-        return (bike.price > 200 && bike.price < 400)
+        return (bike.price >= 200 && bike.price <= 400)
       });
       setResults(middlest);
     } else if (priceHigh) {
@@ -49,7 +49,7 @@ function Filter(props) {
     <div className="filter-form">
       <form className="search-filter" onSubmit={props.handleSubmit}>
           <label htmlFor="lowest-price">
-            Under $50
+            Below $200
           </label>
           <input
             type="checkbox"
@@ -58,7 +58,7 @@ function Filter(props) {
             onChange={(event) => setPriceLow(event.target.checked)}
           />
          <label htmlFor="medium-price">
-            $50 to $150
+            $200 to $400
           </label>
           <input
             type="checkbox"
@@ -67,7 +67,7 @@ function Filter(props) {
             onChange={(event) => setPriceMedium(event.target.checked)}
           />
           <label htmlFor="lowest-price">
-            $150 & over
+            Above $400
           </label>
           <input
             type="checkbox"
