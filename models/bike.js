@@ -8,7 +8,7 @@ const bikeSchema = new Schema(
     category: { type: String, required: true },
     description: { type: String, required: true },
     color: { type: String, required: false },
-    price: { type: String, required: true },
+    price: { type: Number, required: true },
     size: { type: String, required: true },
     imageURL: { type: String, required: true },
     isSold: { type: Boolean, required: false },
