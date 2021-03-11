@@ -29,8 +29,9 @@ const Nav = ({ user }) => {
     <nav>
       <div className='nav'>
         <NavLink className="logo" to="/"><img src='http://westtownbikes.org/wp-content/uploads/2018/08/WTB-Ciclo-Urbano-Yellow-logo.jpg' alt='logo' /></NavLink>
+        {user && <div className="link-greeting">Hello, {user.firstName}</div>}
         <div className="links">
-          {user && <div className="link-greeting">Hello, {user.firstName}</div>}
+          {/* {user && <div className="link-greeting">Hello, {user.firstName}</div>} */}
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}
         </div>
