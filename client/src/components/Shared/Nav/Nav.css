@@ -9,6 +9,7 @@ nav img:hover{
 }
 
 nav {
+  font-family: 'roboto';
   flex: 1;
   position: fixed;
   width: 100%;
@@ -37,7 +38,7 @@ a.logo{
 }
 
 nav a:hover{
-  color: yellow;
+  color: #FCF002;
   transition: all 0.3s ease;
   transition-property: all;
   transition-duration: 0.3s;
@@ -47,27 +48,34 @@ nav a:hover{
 
 nav a{
   text-decoration: none;
-  color: white;
+  color:  #F8E8DD;
   flex: 2;
   max-width: 60vw;
   align-items: center;
-  font-size: 15px;
+  font-size: 10px;
   display: flex;
-  margin: 10px;
+  margin: 5px;
   justify-content: space-between;
+  margin-right: 5px;
 }
 
-
-nav .link-greeting{
+ .link-greeting{
     padding: 0 100px;
     font-size: 40px;
     text-align: center;
+    /* display: flex;
+    flex-wrap: nowrap; */
+    margin: auto;
+    justify-content: center;
 }
 
 .links{
+  flex: 2;
+  max-width: 60vw;
+  align-items: flex-start;
+  font-size: 20px;
   display: flex;
-  justify-content: space-between;
-  align-self: flex-start;
+  text-align: center;
 }
 
 .link-greeting{
