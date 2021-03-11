@@ -37,7 +37,7 @@ a.logo{
 }
 
 nav a:hover{
-  color: yellow;
+  color: rgb(237	,221,	83);
   transition: all 0.3s ease;
   transition-property: all;
   transition-duration: 0.3s;

@@ -24,6 +24,7 @@ const signUp = async (req, res) => {
 
     const payload = {
       email: user.email,
+      firstName: user.firstName
     };
 
     const token = jwt.sign(payload, TOKEN_KEY);
