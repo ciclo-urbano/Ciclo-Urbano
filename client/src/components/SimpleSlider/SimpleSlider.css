@@ -1,11 +1,8 @@
-img {
-  width: 500px;
+.carousel img {
+  width: 40vw;
   height: 300px;
   object-fit: cover;
   object-position: 50% 50%;
   margin: 0 auto;
   align-items: center;
-}
-
-.carousel {
 }
