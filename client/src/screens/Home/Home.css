@@ -1,4 +1,5 @@
 .welcome-container {
+  margin-bottom: 50px;
   display: flex;
   flex-direction: row;
   max-height: 400px;

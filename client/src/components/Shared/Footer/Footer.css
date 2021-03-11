@@ -1,0 +1,10 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #B0AB99;
+  color: black;
+  width: 100%;
+}
