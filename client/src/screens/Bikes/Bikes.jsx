@@ -4,6 +4,7 @@ import './Bikes.css'
 import Bike from '../../components/Bike/Bike'
 import Search from '../../components/Search/Search'
 import Layout from '../../components/Shared/Layout/Layout'
+import Filter from '../../components/Filter/Filter'
 import { getBikes } from '../../services/bikes'
 
 const Bikes = (props) => {
@@ -33,6 +34,7 @@ const Bikes = (props) => {
   return (
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
+      <Filter onSubmit={handleSubmit} bikes={allBikes} />
       <Link to='/add-bike'>Add Bike</Link>
       <div className="bikes">
         {bikesJSX}
