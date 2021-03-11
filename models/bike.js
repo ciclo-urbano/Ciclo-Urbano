@@ -7,6 +7,7 @@ const bikeSchema = new Schema(
     make: { type: String, required: true },
     category: { type: String, required: true },
     description: { type: String, required: true },
+    color: { type: String, required: false },
     price: { type: String, required: true },
     size: { type: String, required: true },
     imageURL: { type: String, required: true },
