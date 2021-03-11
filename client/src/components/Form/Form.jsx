@@ -50,14 +50,7 @@ function Form(props) {
   return (
     // <div className="bike-form-container">
     <form className="bike-form" onSubmit={handleSubmit}>
-      <input
-        className="input input-model"
-        placeholder="Model"
-        value={bike.model}
-        name="model"
-        required
-        onChange={handleChange}
-      />
+      <label htmlFor='Make'>Make</label>
       <input
         className="input input-make"
         placeholder="Make"
@@ -66,6 +59,16 @@ function Form(props) {
         required
         onChange={handleChange}
       />
+      <label htmlFor='Model'>Model</label>
+      <input
+        className="input input-model"
+        placeholder="Model"
+        value={bike.model}
+        name="model"
+        required
+        onChange={handleChange}
+      />
+      <label htmlFor='Category'>Category</label>
       <input
         className="input input-category"
         placeholder="Category"
@@ -74,6 +77,7 @@ function Form(props) {
         required
         onChange={handleChange}
       />
+      <label htmlFor='Description'>Description</label>
       <input
         className="input input-description"
         placeholder="Description"
@@ -82,6 +86,7 @@ function Form(props) {
         required
         onChange={handleChange}
       />
+      <label htmlFor='Color'>Color</label>
       <input
         className="input input-color"
         placeholder="Color"
@@ -90,6 +95,7 @@ function Form(props) {
         required
         onChange={handleChange}
       />
+      <label htmlFor='Price'>Price</label>
       <input
         className="input input-price"
         placeholder="Price"
@@ -98,6 +104,7 @@ function Form(props) {
         required
         onChange={handleChange}
       />
+      <label htmlFor='Size'>Size</label>
       <input
         className="input input-size"
         placeholder="Size"
@@ -106,6 +113,7 @@ function Form(props) {
         required
         onChange={handleChange}
       />
+      <label htmlFor='Image'>Image URL</label>
       <input
         className="input input-url"
         placeholder="Image URL"
