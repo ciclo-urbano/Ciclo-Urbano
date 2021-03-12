@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Bike from '../../components/Bike/Bike'
 import "./Filter.css";
 
 function Filter(props) {
@@ -77,12 +78,8 @@ function Filter(props) {
       </div>
       {results.length ? (
         <div className="results-container">
-          {results.map((result) => (
-            <Link key={result.id} to={`/bikes/${result.id}`}>
-              <img src={result.imageURL} />
-              <p>{result.model}</p>
-              <p>{result.price}</p>
-            </Link>
+          {results.map((bike, index) => (
+            <Bike _id={bike._id} model={bike.model} imageURL={bike.imageURL} price={bike.price} key={index}/>
           ))}
         </div>
       ) : null}
