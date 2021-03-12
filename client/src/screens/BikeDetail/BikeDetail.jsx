@@ -27,9 +27,11 @@ function BikeDetail(props) {
       <div className='bike-detail'>
         <img className='bike-detail-image' src={bike.imageURL} alt={bike.model} />
         <div className='detail-text'>
-          <div className='bike-detail-model'>Model: {bike.model}</div>
-          <div className='bike-detail-price'>Price: ${bike.price}</div>
-          <div className='bike-description'>Description: {bike.description}</div>
+          <div className='bike-detail-model'>{`${bike.make} ${bike.model}`}</div>
+          <div className='bike-detail-price'>{`$${bike.price}`}</div>
+          <div className='bike-detail-color'>{bike.color && `Color: ${bike.color}`}</div>
+          <div className='bike-detail-size'>{`Size: ${bike.size}`}</div>
+          <div className='bike-description'>{bike.description}</div>
           <div className='button-container'>
             <button className='edit-button'>
               <Link className='edit-link' to={`/bikes/${bike._id}/edit`}>Edit</Link>
