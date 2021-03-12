@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Bikes.css'
-import Bike from '../../components/Bike/Bike'
-import Search from '../../components/Search/Search'
-import Layout from '../../components/Shared/Layout/Layout'
-import Filter from '../../components/Filter/Filter'
-import { getBikes } from '../../services/bikes'
+import './Bikes.css';
+import Bike from '../../components/Bike/Bike';
+import Search from '../../components/Search/Search';
+import Layout from '../../components/Shared/Layout/Layout';
+import Filter from '../../components/Filter/Filter';
+import { getBikes } from '../../services/bikes';
+import { priceLow, priceMed, priceHigh } from "../../utils/filters";
 
 const Bikes = (props) => {
   const [allBikes, setAllBikes] = useState([])
   const [queriedBikes, setQueriedBikes] = useState([])
+  const [sortType, setSortType] = useState([])
 
   useEffect(() => {
     const fetchBikes = async () => {
@@ -25,6 +27,22 @@ const Bikes = (props) => {
     setQueriedBikes(newQueriedBikes)
   }
 
+  const handleSort = type => {
+    setSortType(type)
+    switch (type) {
+      case "below-200":
+        setQueriedBikes(priceLow(queriedBikes))
+        console.log(queriedBikes)
+        break
+      case "200-400":
+        setQueriedBikes(priceMed(queriedBikes))
+        break
+      case "over-400":
+        setQueriedBikes(priceHigh(queriedBikes))
+        break
+    }
+ }
+
   const handleSubmit = event => event.preventDefault()
 
   const bikesJSX = queriedBikes.map((bike, index) =>
@@ -34,8 +52,8 @@ const Bikes = (props) => {
   return (
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      <Filter onSubmit={handleSubmit} bikes={allBikes} />
-      <Link className="add-bike" to='/add-bike'><button>Add Bike</button></Link>
+      <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort}/>
+      <Link to='/add-bike'>Add Bike</Link>
       <div className="bikes">
         {bikesJSX}
       </div>
