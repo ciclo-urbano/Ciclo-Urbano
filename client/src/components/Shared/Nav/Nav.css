@@ -81,3 +81,11 @@ nav a{
 .link-greeting{
   margin-top: 20px;
 }
+
+.logButton{
+  background-color: #95B1AE;
+  height: 30px;
+  width: 70px;
+  margin: 0 auto;
+  padding: 0;
+}

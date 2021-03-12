@@ -4,14 +4,14 @@ import { NavLink } from 'react-router-dom'
 
 const authenticatedOptions = (
   <>
-    <NavLink className="link" to="/sign-out">SignOut</NavLink>
+    <NavLink className="link" to="/sign-out"><button className='logButton'>SignOut</button></NavLink>
   </>
 )
 
 const unauthenticatedOptions = (
   <>
-    <NavLink className="link" to="/sign-in">SignIn</NavLink>
-    <NavLink className='link' to='/sign-up'>SignUp</NavLink>
+     <NavLink className='link' to='/sign-up'>SignUp</NavLink>
+     <NavLink className="link" to="/sign-in"><button className='logButton'>SignIn</button></NavLink>
   </>
 )
 
@@ -20,7 +20,6 @@ const alwaysOptions = (
     <NavLink className='link' to='/'>Home</NavLink>
     <NavLink className="link" to="/bikes">Bikes</NavLink>
     <a href='http://westtownbikes.org/events/' target="_blank">Events</a>
-    <a href='http://westtownbikes.org/youth-rograms/' target="_blank">YouthPrograms</a>
     <a href='http://westtownbikes.org/ciclo-urbano/' target='_blank'>Visit</a>
   </>
 )
