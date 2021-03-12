@@ -22,6 +22,26 @@ const fakeIt = async () => {
   //         onHold: false,
   //     }
   // })
+
+  const builderBee = new User({
+    email: 'bb@westtownbikes.org',
+    firstName: 'Builder',
+    lastName: 'Bee',
+    bikesBuilt: [],
+    bikesChecked: []
+  });
+  await builderBee.save();
+
+  const checkerBee = new User({
+    email: 'cb@westtownbikes.org',
+    firstName: 'Checker',
+    lastName: 'Bee',
+    bikesBuilt: [],
+    bikesChecked: []
+  });
+  await checkerBee.save();
+
+
   const realBikes = [
     {
       make: "Trek",
