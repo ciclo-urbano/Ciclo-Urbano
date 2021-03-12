@@ -3,7 +3,8 @@
   background-color: #F7EBE8;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 8px;
-  transition: .3s;
+  transition: .1s;
+  text-align: center;
 }
 
 .bike a {
@@ -13,7 +14,8 @@
 }
 
 .bike:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  opacity: 90%;
 }
 
 .bike-image {
@@ -21,4 +23,12 @@
   width: 500px;
   object-fit: cover;
   object-position: 50% 50%;
+}
+
+.bike-model, .bike-price {
+  padding: 4px;
+}
+
+.bike-model {
+  font-size: 18px;
 }
