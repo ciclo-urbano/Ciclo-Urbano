@@ -26,7 +26,7 @@ export default function SimpleSlider() {
       slidesToScroll: 1
       };
   return (
-    <Slider {...settings}>
+    <Slider className="slider" {...settings}>
       {bikes.reverse().map((bike, index) =>
         index < 5 ?
           <div key={index} className="carousel">
