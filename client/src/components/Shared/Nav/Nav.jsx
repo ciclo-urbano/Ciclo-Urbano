@@ -50,7 +50,7 @@ const Nav = ({ user }) => {
         <NavLink className="logo" to="/"><img src='https://i.imgur.com/3i8g2OC.jpg' alt='logo' /></NavLink>
         {user && <div className="link-greeting">Hello, {user.firstName}.</div>}
         <div className={renderClasses()}>
-          {alwaysOptions}{user ? authenticatedOptions : unauthenticatedOptions}
+          {alwaysOptions} {user ? authenticatedOptions : unauthenticatedOptions}
         </div>
         <div onClick={handleNavLinksToggle} className='hamburgerToggle' >
           <i  className='fas fa-bars fa-lg'></i>
