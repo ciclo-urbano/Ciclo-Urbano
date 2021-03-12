@@ -35,7 +35,7 @@ const Bikes = (props) => {
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Filter onSubmit={handleSubmit} bikes={allBikes} />
-      <Link to='/add-bike'>Add Bike</Link>
+      <Link className="add-bike" to='/add-bike'><button>Add Bike</button></Link>
       <div className="bikes">
         {bikesJSX}
       </div>
