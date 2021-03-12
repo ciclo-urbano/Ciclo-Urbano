@@ -1,13 +1,12 @@
 export const priceLow = arr => {
-  let sortedBikes = arr.sort((a, b) => a.price - b.price)
-  
-  return sortedBikes.filter((bike) => bike.price < 201)
+  let filteredBikes = arr.filter((bike) => bike.price < 201)
+  return filteredBikes.sort((a, b) => a.price - b.price)
 }
 export const priceMed = arr => {
-  let sortedBikes = arr.sort((a, b) => a.price - b.price)
-  return sortedBikes.filter((bike) => bike.price > 200 && bike.price < 401)
+  let filteredBikes = arr.filter((bike) => bike.price > 200 && bike.price < 401)
+  return filteredBikes.sort((a, b) => a.price - b.price)
 }
 export const priceHigh = arr => {
-  let sortedBikes = arr.sort((a, b) => a.price - b.price)
-  return sortedBikes.filter((bike) => bike.price > 400)
+  let filteredBikes = arr.filter((bike) => bike.price > 400)
+  return filteredBikes.sort((a, b) => a.price - b.price)
 }
