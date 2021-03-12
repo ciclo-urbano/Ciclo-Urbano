@@ -31,14 +31,13 @@ const Bikes = (props) => {
     setSortType(type)
     switch (type) {
       case "below-200":
-        setQueriedBikes(priceLow(queriedBikes))
-        console.log(queriedBikes)
+        setQueriedBikes(priceLow(allBikes))
         break
       case "200-400":
-        setQueriedBikes(priceMed(queriedBikes))
+        setQueriedBikes(priceMed(allBikes))
         break
       case "over-400":
-        setQueriedBikes(priceHigh(queriedBikes))
+        setQueriedBikes(priceHigh(allBikes))
         break
     }
  }
