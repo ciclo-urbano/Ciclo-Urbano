@@ -31,9 +31,12 @@ const Nav = ({ user }) => {
     <nav>
       <div className='nav'>
         <NavLink className="logo" to="/"><img src='https://i.imgur.com/3i8g2OC.jpg' alt='logo' /></NavLink>
-        {user && <div className="link-greeting">Hello, {user.firstName}</div>}
+        {user && <div className="link-greeting">Hello, {user.firstName}.</div>}
         <div className="links">
           {alwaysOptions}{user ? authenticatedOptions : unauthenticatedOptions}
+        </div>
+        <div className='hamburgerToggle'>
+          <i className='fas fa-bars fa-lg'></i>
         </div>
       </div>
     </nav>
