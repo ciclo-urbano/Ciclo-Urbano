@@ -1,0 +1,54 @@
+.bike-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  justify-content: flex-start;
+}
+
+.bike-detail-image {
+  max-width: 60vw;
+}
+
+.detail-text {
+  flex: 1 0 auto;
+}
+
+.bike-detail-size,
+.bike-detail-color,
+.bike-detail-model,
+.bike-detail-price,
+.bike-description {
+  padding: 1vw;
+}
+
+.bike-detail-model {
+  font-size: 2em;
+  font-weight: 777;
+}
+
+.bike-detail-price {
+  font-weight: 501;
+}
+
+
+.button-container {
+  margin-top: 2em;
+}
+
+
+.button-container > * {
+  margin-left: 1em;
+}
+
+.button-container button {
+  background-color: #95B1AE;
+}
+
+.button-container a {
+  text-decoration: none;
+  color: black;
+}
+
+

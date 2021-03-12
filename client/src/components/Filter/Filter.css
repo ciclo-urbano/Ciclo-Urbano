@@ -1,3 +1,39 @@
+.search-filter {
+  display: flex;
+  color: rgb(33, 33, 33);
+  padding: 0 20px 20px 20px;
+  font-family: 'Roboto';
+}
+
 .filter-form {
-  margin-top: 200px;
+  display: flex;
+  margin-left: 30%;
+  align-items: flex-end;
+  max-width: 40vw;
+}
+
+.price-header {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  align-items: flex-start;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.check label {
+  padding-left: 10px;
+}
+
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
