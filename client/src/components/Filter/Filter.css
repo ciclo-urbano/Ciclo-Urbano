@@ -1,3 +1,26 @@
 .filter-form {
-  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 200px;
+  /* position: sticky; */
+  /* top: 30%; */
+  /* z-index: 100; */
+  background-color: rgba(237, 221, 83, 0.5);
+  color: rgb(33, 33, 33);
+  padding: 0 20px 20px 20px;
+  font-family: 'Roboto';
+}
+
+.price-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
 }

@@ -1,0 +1,47 @@
+.bike-detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.bike-detail-image {
+  width: 45vw;
+}
+
+.detail-text {
+  padding: 30px;
+  font-family: 'Roboto';
+}
+
+.bike-detail-model {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.bike-detail-price {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.button-container {
+  padding: 10px;
+}
+
+.delete-button {
+  margin: 5px;
+}
+
+.button-container button {
+  background-color: #95B1AE;
+}
+
+.button-container a {
+  text-decoration: none;
+  color: black;
+}
+
+
