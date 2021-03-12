@@ -39,7 +39,7 @@ function Filter(props) {
       const highest = props.bikes.filter((bike) => {
         return bike.price > 400;
       });
-      setResults(highest);
+      props.setQueriedBikes(highest);
     }
   }, [priceLow, priceMedium, priceHigh]);
 
@@ -76,13 +76,13 @@ function Filter(props) {
           </div>
         </form>
       </div>
-      {results.length ? (
+      {/* {results.length ? (
         <div className="results-container">
           {results.map((bike, index) => (
             <Bike _id={bike._id} model={bike.model} imageURL={bike.imageURL} price={bike.price} key={index}/>
           ))}
         </div>
-      ) : null}
+      ) : null} */}
     </>
   );
 }
