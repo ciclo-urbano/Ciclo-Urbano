@@ -1,5 +1,6 @@
 const db = require('../db/connection');
 const Bike = require('../models/bike.js');
+const User = require('../models/user.js');
 const faker = require('faker');
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
