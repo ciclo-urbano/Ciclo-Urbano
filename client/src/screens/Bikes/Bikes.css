@@ -4,3 +4,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.add-bike {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.add-bike button {
+  background-color: #95B1AE;
+}
+
+a {
+  text-decoration: none;
+}
