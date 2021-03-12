@@ -6,7 +6,9 @@ const userSchema = new Schema(
     email: { type: String, required: true },
     password_digest: { type: String, required: true },
     firstName: { type: String, required: true },
-    lastName: { type: String, required: true }
+    lastName: { type: String, required: true },
+    bikesBuilt: [{ type: Schema.Types.ObjectId, ref: 'Bike' }],
+    bikesChecked: [{type: Schema.Types.ObjectId, ref: 'Bike'}]
   },
   { timestamps: true }
 );
