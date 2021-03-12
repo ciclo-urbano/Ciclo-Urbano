@@ -31,7 +31,7 @@ const Nav = ({ user }) => {
   return (
     <nav>
       <div className='nav'>
-        <NavLink className="logo" to="/"><img src='http://westtownbikes.org/wp-content/uploads/2018/08/WTB-Ciclo-Urbano-Yellow-logo.jpg' alt='logo' /></NavLink>
+        <NavLink className="logo" to="/"><img src='https://i.imgur.com/3i8g2OC.jpg' alt='logo' /></NavLink>
         {user && <div className="link-greeting">Hello, {user.firstName}</div>}
         <div className="links">
           {alwaysOptions}{user ? authenticatedOptions : unauthenticatedOptions}
