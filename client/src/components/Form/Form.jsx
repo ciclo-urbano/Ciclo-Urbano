@@ -26,6 +26,11 @@ function Form(props) {
     }
   )
 
+  // if (props.user) {
+  //   setBike({ ...bike, builderID: "gary" });
+  //   console.log("oh, gary");
+  // }
+  
   useEffect(() => {
     if (props.id) {
       const fetchBike = async () => {
@@ -33,6 +38,8 @@ function Form(props) {
         setBike(theBike);
       }
       fetchBike();
+    } else {
+      setBike({ ...bike, builderID: props.user.userID });
     }
   }, [props.id]);
 
@@ -50,12 +57,13 @@ function Form(props) {
       const theBike = await updateBike(props.id, bike);
       setUpdated(theBike);
     } else {
+      console.log(props.user.userID);
+      setBike(8);
+      // setBike({ ...bike, builderID: toString(props.user.userID) });
       console.log(bike);
-      setBike({ ...bike, builderID: props.user.userID })
-      console.log(bike);
-      const theBike = await createBike(bike);
-      console.log('created', theBike);
-      setUpdated(theBike);
+      // const theBike = await createBike(bike);
+      // console.log('created', theBike);
+      // setUpdated(theBike);
     }
   }
 
