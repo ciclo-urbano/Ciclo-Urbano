@@ -80,8 +80,14 @@ const getUsers = async (req, res) => {
 }
 };
 
-const getBikesByUser = async (req, res) => {
-  
+const getUser = async (req, res) => {
+  try {
+    console.log(req.params.id);
+    const user = await User.findById(req.params.id).populate('Bike');
+    res.json(user);
+} catch (error) {
+    res.status(500).json({ error: error.message });
+}
 };
 
 
@@ -94,5 +100,5 @@ module.exports = {
   signIn,
   verify,
   getUsers,
-  getBikesByUser
+  getUser
 };

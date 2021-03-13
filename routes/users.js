@@ -10,7 +10,7 @@ router.get('/verify', controllers.verify);
 
 //assoc routes
 router.get('/users', controllers.getUsers);
-router.get('./users/:id', controllers.getBikesByUser);
+router.get('/users/:id', controllers.getUser);
 
 //ambitious?
 // router.post('/change-password', controllers.changePassword)
