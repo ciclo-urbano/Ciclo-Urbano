@@ -1,47 +1,32 @@
-const db = require('../db/connection');
-const Bike = require('../models/bike.js');
-const User = require('../models/user.js');
-const faker = require('faker');
+const db = require("../db/connection");
+const Bike = require("../models/bike.js");
+const User = require("../models/user.js");
+const faker = require("faker");
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const fakeIt = async () => {
-
-  // create an empty array of 100 objects
-  // use faker package to generate fake data
-  // const bikes = [...Array(50)].map(item => {
-  //     return {
-  //       model: faker.lorem.word(),
-  //       make: faker.lorem.word(),
-  //       category: faker.lorem.word(),
-  //       description: faker.lorem.paragraph(),
-  //       price: faker.lorem.word(),
-  //       size: faker.lorem.word(),
-  //         imageURL: faker.internet.url(),
-  //       isSold: false,
-  //         onHold: false,
-  //     }
-  // })
-
+  //make n save fake builder
   const builderBee = new User({
-    email: 'bb@westtownbikes.org',
-    firstName: 'Builder',
-    lastName: 'Bee',
+    email: "bb@westtownbikes.org",
+    firstName: "Builder",
+    lastName: "Bee",
     bikesBuilt: [],
-    bikesChecked: []
+    bikesChecked: [],
   });
   await builderBee.save();
 
+  //make n save fake checker
   const checkerBee = new User({
-    email: 'cb@westtownbikes.org',
-    firstName: 'Checker',
-    lastName: 'Bee',
+    email: "cb@westtownbikes.org",
+    firstName: "Checker",
+    lastName: "Bee",
     bikesBuilt: [],
-    bikesChecked: []
+    bikesChecked: [],
   });
   await checkerBee.save();
 
-
+  //seed bikes w assoc
   const realBikes = [
     {
       make: "Trek",
@@ -54,7 +39,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Trek",
@@ -67,7 +52,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Mongoose",
@@ -80,7 +65,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Giant",
@@ -88,12 +73,12 @@ const fakeIt = async () => {
       category: "Hybrid",
       description: "this is a bike",
       price: 250,
-      size: "17.5\"",
+      size: '17.5"',
       imageURL: "https://i.imgur.com/OBUSqMi.jpg",
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Giant",
@@ -106,7 +91,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Giant",
@@ -114,12 +99,12 @@ const fakeIt = async () => {
       category: "Mountain",
       description: "this is a bike",
       price: 250,
-      size: "17.5\"",
+      size: '17.5"',
       imageURL: "https://i.imgur.com/ky3ppTJ.jpg",
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Schwinn",
@@ -132,7 +117,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Schwinn",
@@ -145,7 +130,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Huffy",
@@ -158,7 +143,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Specialized",
@@ -171,7 +156,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Specialized",
@@ -184,7 +169,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Motobecane",
@@ -197,7 +182,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Motobecane",
@@ -210,7 +195,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Lece",
@@ -223,7 +208,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Raleigh",
@@ -236,7 +221,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Trek",
@@ -249,7 +234,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Trek",
@@ -262,7 +247,7 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
+      checkerID: checkerBee,
     },
     {
       make: "Trek",
@@ -275,18 +260,24 @@ const fakeIt = async () => {
       isSold: false,
       onHold: false,
       builderID: builderBee,
-      checkerID: checkerBee
-    }];
-    
-    
-    
+      checkerID: checkerBee,
+    },
+  ];
 
+  //put them into db
   await Bike.insertMany(realBikes);
-}
+
+  //save assoc data
+  builderBee.bikesBuilt = await Bike.find({ builderID: builderBee });
+  await builderBee.save();
+  checkerBee.bikesChecked = await Bike.find({ checkerID: checkerBee });
+  await checkerBee.save();
+};
 
 const run = async () => {
   await fakeIt();
+  console.log("created assoc posts");
   db.close();
-}
+};
 
 run();
