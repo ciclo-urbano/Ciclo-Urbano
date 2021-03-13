@@ -12,7 +12,7 @@ router.get('/verify', controllers.verify);
 router.get('/users', controllers.getUsers);
 router.get('/users/:id', controllers.getUser);
 
-//ambitious?
+//ambitious routes!
 // router.post('/change-password', controllers.changePassword)
 
 module.exports = router
