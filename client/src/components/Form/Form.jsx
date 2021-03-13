@@ -1,8 +1,17 @@
 import { useState, useEffect } from 'react';
 import { getBike, updateBike, createBike } from '../../services/bikes.js';
+import { useHistory } from 'react-router-dom';
+
 import './Form.css'
 
 function Form(props) {
+  const [isUpdated, setUpdated] = useState(false);
+  const history = useHistory();
+  
+  if (isUpdated) {
+    history.push('/')
+  }
+  
   const [bike, setBike] = useState(
     {
       model: '',
@@ -39,15 +48,14 @@ function Form(props) {
     e.preventDefault();
     if (props.id) {
       const theBike = await updateBike(props.id, bike);
-      props.setUpdated(theBike);
-
+      setUpdated(theBike);
     } else {
       console.log(bike);
-      setBike({ ...bike, builderID: props.user._id })
+      setBike({ ...bike, builderID: props.user.userID })
       console.log(bike);
       const theBike = await createBike(bike);
       console.log('created', theBike);
-      props.setUpdated(theBike)
+      setUpdated(theBike);
     }
   }
 
