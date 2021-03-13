@@ -12,6 +12,7 @@ function Form(props) {
     history.push('/')
   }
   
+  //initialize bike as empty object
   const [bike, setBike] = useState(
     {
       model: '',
@@ -25,12 +26,8 @@ function Form(props) {
       onHold: false,
     }
   )
-
-  // if (props.user) {
-  //   setBike({ ...bike, builderID: "gary" });
-  //   console.log("oh, gary");
-  // }
   
+  //grab the bike if passed, if not set builderID as currently logged in user's ID
   useEffect(() => {
     if (props.id) {
       const fetchBike = async () => {
@@ -57,13 +54,9 @@ function Form(props) {
       const theBike = await updateBike(props.id, bike);
       setUpdated(theBike);
     } else {
-      console.log(props.user.userID);
-      setBike(8);
-      // setBike({ ...bike, builderID: toString(props.user.userID) });
-      console.log(bike);
-      // const theBike = await createBike(bike);
-      // console.log('created', theBike);
-      // setUpdated(theBike);
+      const theBike = await createBike(bike);
+      console.log('created', theBike);
+      setUpdated(theBike);
     }
   }
 
