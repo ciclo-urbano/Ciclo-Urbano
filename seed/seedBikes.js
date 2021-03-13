@@ -11,6 +11,7 @@ const fakeIt = async () => {
     email: "bb@westtownbikes.org",
     firstName: "Builder",
     lastName: "Bee",
+    password_digest: "test",
     bikesBuilt: [],
     bikesChecked: [],
   });
@@ -21,6 +22,7 @@ const fakeIt = async () => {
     email: "cb@westtownbikes.org",
     firstName: "Checker",
     lastName: "Bee",
+    password_digest: "test",
     bikesBuilt: [],
     bikesChecked: [],
   });
