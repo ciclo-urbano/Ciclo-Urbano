@@ -39,16 +39,19 @@ function Form(props) {
     e.preventDefault();
     if (props.id) {
       const theBike = await updateBike(props.id, bike);
-      props.setUpdated(theBike)
+      props.setUpdated(theBike);
+
     } else {
+      console.log(bike);
+      setBike({ ...bike, builderID: props.user._id })
+      console.log(bike);
       const theBike = await createBike(bike);
-      console.log(theBike)
+      console.log('created', theBike);
       props.setUpdated(theBike)
     }
   }
 
   return (
-    // <div className="bike-form-container">
     <form className="bike-form" onSubmit={handleSubmit}>
       <label htmlFor='Make'>Make</label>
       <input
@@ -124,7 +127,6 @@ function Form(props) {
       />
       <button type='submit' className='submit-button'>{ props.id ? 'Save Changes' : 'Add'}</button>
       </form>
-      // </div>
   )
 }
 
