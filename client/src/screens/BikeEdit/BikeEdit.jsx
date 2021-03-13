@@ -15,7 +15,7 @@ function BikeEdit(props) {
   }
   
   return (
-    <Layout>
+    <Layout user={props.user}>
       <Form setUpdated={setUpdated} id={id}/>
     </Layout>
   )

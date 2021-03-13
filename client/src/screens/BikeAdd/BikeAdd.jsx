@@ -5,8 +5,8 @@ import './BikeAdd.css'
 
 function BikeAdd(props) {
   return (
-    <Layout>
-      <Form />
+    <Layout user={props.user}>
+      <Form user={props.user}/>
     </Layout>
   )
 }
