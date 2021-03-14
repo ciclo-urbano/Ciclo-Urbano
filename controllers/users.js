@@ -74,7 +74,7 @@ const verify = async (req, res) => {
 
 const getUsers = async (req, res) => {
   try {
-    const users = await User.find().populate('Bike');
+    const users = await User.find().populate('bikesBuilt');
     res.json(users);
 } catch (error) {
     res.status(500).json({ error: error.message });
@@ -83,7 +83,7 @@ const getUsers = async (req, res) => {
 
 const getUser = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id).populate('Bike');
+    const user = await User.findById(req.params.id).populate('bikesBuilt');
     res.json(user);
 } catch (error) {
     res.status(500).json({ error: error.message });

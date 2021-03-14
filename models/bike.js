@@ -19,4 +19,4 @@ const bikeSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Bike", bikeSchema);
+module.exports = mongoose.model("Bike", bikeSchema, "bikes");

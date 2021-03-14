@@ -36,7 +36,7 @@ function Form(props) {
       }
       fetchBike();
     } else {
-      setBike({ ...bike, builderID: props.user.userID });
+      // setBike({ ...bike, builderID: props.user.userID });
     }
   }, [props.id]);
 
@@ -54,9 +54,9 @@ function Form(props) {
       const theBike = await updateBike(props.id, bike);
       setUpdated(theBike);
     } else {
-      const theBike = await createBike(bike);
+      const theBike = await createBike(props.user.userID,bike);
       console.log('created', theBike);
-      setUpdated(theBike);
+      // setUpdated(theBike);
     }
   }
 
