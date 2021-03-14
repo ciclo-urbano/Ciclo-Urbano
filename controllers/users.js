@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
-const Bikes = require("../models/bike");
 const db = require("../db/connection");
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -72,6 +71,7 @@ const verify = async (req, res) => {
 // challenge mode
 // const changePassword = async (req, res) => {};
 
+//todo add checked bikes and route
 const getUsers = async (req, res) => {
   try {
     const users = await User.find().populate('bikesBuilt');
