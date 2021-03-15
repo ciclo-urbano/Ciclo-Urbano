@@ -6,7 +6,9 @@ import './BikeAdd.css'
 function BikeAdd(props) {
   return (
     <Layout user={props.user}>
-      <Form user={props.user}/>
+      <div className="form-background">
+        <Form user={props.user} />
+        </div>
     </Layout>
   )
 }
