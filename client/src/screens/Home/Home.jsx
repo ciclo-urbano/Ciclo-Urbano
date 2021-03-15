@@ -19,8 +19,8 @@ const Home = (props) => {
             <span className="community">For our community, by the community🚲</span>
           </animated.p>
         </div>
-      </div>  
-      <p className="featured-header">Bikes ready for a loving home:</p>
+      </div>
+      <p className="featured-header">Ready for a loving home:</p>
       <SimpleSlider />
     </Layout>
   )

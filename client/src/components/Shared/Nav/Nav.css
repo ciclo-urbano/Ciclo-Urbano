@@ -16,6 +16,8 @@ nav img{
   height: 70px;
   width: 70px;
   margin-left: 5px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 nav img:hover{
@@ -28,6 +30,7 @@ a.logo{
 
 .link-greeting {
   font-size: 30px;
+  margin-left: 40%;
 }
 
 #hamnav {
@@ -51,7 +54,7 @@ a.logo{
   text-align: center;
 }
 #hamitems a:hover {
-  background: #401408;
+  color: #FCF002;
 }
 
 /* [ON SMALL SCREENS] */
@@ -60,7 +63,7 @@ a.logo{
   #hamnav label { 
     display: inline-block; 
     color: white;
-    background: #a02620;
+    background: #95B1AE;
     font-style: normal;
     font-size: 1.2em;
     padding: 10px;
@@ -77,4 +80,12 @@ a.logo{
   /* Toggle Show/Hide Menu */
   #hamitems { display: none; }
   #hamnav input:checked ~ #hamitems { display: block; }
+}
+
+@media screen and (max-width: 480px){
+  .link-greeting {
+    font-size: 30px;
+    margin-left: 12vw;
+    margin-top: 2vh;
+  }
 }
