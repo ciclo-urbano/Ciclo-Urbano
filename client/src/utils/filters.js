@@ -10,3 +10,11 @@ export const priceHigh = arr => {
   let filteredBikes = arr.filter((bike) => bike.price > 400)
   return filteredBikes.sort((a, b) => a.price - b.price)
 }
+
+export const brandName = (brand, arr) => {
+  return arr.filter((bike) => bike.make === brand)
+}
+
+export const bikeCategory = (category, arr) => {
+  return arr.filter((bike) => bike.category === category)
+}
