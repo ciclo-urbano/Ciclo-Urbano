@@ -38,7 +38,8 @@ function Filter(props) {
             />
           </div>
         </form>
-        <br />
+        </div>
+        <div className="filter-type">
         <p className="filter-header">Category:</p>
         <form className="search-filter" onSubmit={props.handleSubmit}>
             <div className="checkbox">
@@ -65,7 +66,8 @@ function Filter(props) {
               onChange={handleChange}
             />
           </div>
-        </form>
+          </form>
+          </div>
         <div className='filter-type'>
         <p className="filter-header">Popular brands:</p>
         <form className="search-filter" onSubmit={props.handleSubmit}>
@@ -99,7 +101,6 @@ function Filter(props) {
           className="clear-button"
           onClick={props.setQueriedBikes(props.bikes)}
         >Clear All</button> */}
-      </div>
     </div>
   );
 }
