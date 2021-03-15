@@ -6,7 +6,7 @@ import Search from '../../components/Search/Search';
 import Layout from '../../components/Shared/Layout/Layout';
 import Filter from '../../components/Filter/Filter';
 import { getBikes } from '../../services/bikes';
-import { priceLow, priceMed, priceHigh } from "../../utils/filters";
+import { priceLow, priceMed, priceHigh, brandName, bikeCategory } from "../../utils/filters";
 
 const Bikes = (props) => {
   const [allBikes, setAllBikes] = useState([])
@@ -28,27 +28,29 @@ const Bikes = (props) => {
   }
 
   const handleSort = type => {
-    setSortType(type.alt)
+    setSortType(type)
 
-    console.log(sortType)
     // console.log(type.alt, type.value)
-    switch (type.alt, type.value) {
-      case "price":
+    switch (type) {
+      case "below-200":
+        setQueriedBikes(priceLow(queriedBikes))
         // console.log(type)
-        if (type.value === "under-200") {
-          setQueriedBikes(priceLow(allBikes))
-        }
         break
       case "200-400":
-        setQueriedBikes(priceMed(allBikes))
+        setQueriedBikes(priceMed(queriedBikes))
         break
       case "over-400":
-        setQueriedBikes(priceHigh(allBikes))
+        setQueriedBikes(priceHigh(queriedBikes))
         break
-      case "brand":
-        // setQueriedBikes(brandName(type.alt, queriedBikes))
+      case "Huffy": case "Schwinn": case "Trek":
+        setQueriedBikes(brandName(type, queriedBikes))
+        break
+      case "Commuter": case "Mountain": case "Hybrid":
         console.log(type)
+        setQueriedBikes(bikeCategory(type, queriedBikes))
         break
+      default:
+        setQueriedBikes(allBikes)
     }
 }
 
@@ -62,7 +64,7 @@ const Bikes = (props) => {
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes}/>
-      <Link to='/add-bike'>Add Bike</Link>
+      <Link to={`/${props.user.userID}/add-bike`}>Add Bike</Link>
       <div className="bikes">
         {bikesJSX}
       </div>

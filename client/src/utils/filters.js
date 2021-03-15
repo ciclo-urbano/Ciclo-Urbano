@@ -14,3 +14,7 @@ export const priceHigh = arr => {
 export const brandName = (brand, arr) => {
   return arr.filter((bike) => bike.make === brand)
 }
+
+export const bikeCategory = (category, arr) => {
+  return arr.filter((bike) => bike.category === category)
+}

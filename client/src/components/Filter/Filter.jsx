@@ -3,7 +3,7 @@ import "./Filter.css";
 function Filter(props) {
   const handleChange = (e) => {
     e.target.checked ? 
-      props.onChange(e.target) :
+      props.onChange(e.target.value) :
       props.setQueriedBikes(props.bikes)
     // console.log(e.target)
   }
@@ -17,7 +17,6 @@ function Filter(props) {
             <label htmlFor="lowest-price">Below $200</label>
             <input
               type="checkbox"
-              alt="price"
               value="below-200"
               onChange={handleChange}
             />
@@ -26,7 +25,6 @@ function Filter(props) {
             <label htmlFor="medium-price">$200 to $400</label>
             <input
               type="checkbox"
-              alt="price"
               value="200-400"
               onChange={handleChange}
             />
@@ -35,13 +33,39 @@ function Filter(props) {
             <label htmlFor="lowest-price">Above $400</label>
             <input
               type="checkbox"
-              alt="price"
               value="over-400"
               onChange={handleChange}
             />
           </div>
         </form>
         <br />
+        <p className="filter-header">Category:</p>
+        <form className="search-filter" onSubmit={props.handleSubmit}>
+            <div className="checkbox">
+            <label htmlFor="Commuter">Commuter</label>
+            <input
+              type="checkbox"
+              value="Commuter"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Mountain">Mountain</label>
+            <input
+              type="checkbox"
+              value="Mountain"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Hybrid">Hybrid</label>
+            <input
+              type="checkbox"
+              value="Hybrid"
+              onChange={handleChange}
+            />
+          </div>
+        </form>
         <div className='filter-type'>
         <p className="filter-header">Popular brands:</p>
         <form className="search-filter" onSubmit={props.handleSubmit}>
@@ -50,7 +74,6 @@ function Filter(props) {
             <input
               type="checkbox"
               value="Huffy"
-              alt="brand"
               onChange={handleChange}
             />
           </div>
@@ -59,7 +82,6 @@ function Filter(props) {
             <input
               type="checkbox"
               value="Schwinn"
-              alt="brand"
               onChange={handleChange}
             />
           </div>
@@ -68,12 +90,15 @@ function Filter(props) {
             <input
               type="checkbox"
               value="Trek"
-              alt="brand"
               onChange={handleChange}
             />
           </div>
           </form>
-          </div>
+        </div>
+        {/* <button
+          className="clear-button"
+          onClick={props.setQueriedBikes(props.bikes)}
+        >Clear All</button> */}
       </div>
     </div>
   );
