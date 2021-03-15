@@ -60,11 +60,12 @@ const SignIn = (props) => {
 
   return (
       <Layout>
-        <div className="form-container">
+        <div>
             <h3>Admin Sign In</h3>
-            <form onSubmit={onSignIn}>
+            <form className="form-container" onSubmit={onSignIn}>
                 <label>Email:</label>
-                <input
+          <input
+            className="input"
                     required
                     type="text"
                     name="email"
@@ -73,7 +74,8 @@ const SignIn = (props) => {
                     onChange={handleChange}
                 />
                 <label>Password:</label>
-                <input
+          <input
+            className="input"
                     required
                     name="password"
                     value={password}
