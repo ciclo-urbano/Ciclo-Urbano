@@ -86,6 +86,7 @@
 
   .featured-header {
     margin-top: 150px;
+    margin-bottom: 0px;
     padding: 10px;
     background: black;
     color: white;
