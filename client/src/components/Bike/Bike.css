@@ -32,3 +32,10 @@
 .bike-model {
   font-size: 18px;
 }
+
+@media only screen and (max-width: 600px) {
+  .bike-image {
+    height: auto;
+    width: 90%;
+  }
+}
