@@ -20,8 +20,8 @@ const alwaysOptions = (
   <>
     <NavLink className='link' to='/'>Home</NavLink>
     <NavLink className="link" to="/bikes">Bikes</NavLink>
-    <a href='http://westtownbikes.org/events/' target="_blank">Events</a>
-    <a href='http://westtownbikes.org/ciclo-urbano/' target='_blank'>Visit</a>
+    <a href='http://westtownbikes.org/events/' target="_blank" rel="noreferrer">Events</a>
+    <a href='http://westtownbikes.org/ciclo-urbano/' target='_blank' rel="noreferrer">Visit</a>
   </>
 )
 
