@@ -5,7 +5,7 @@ import {useState} from 'react'
 
 const authenticatedOptions = (
   <>
-    <NavLink className="link" to="/sign-out"><button className='logButton'>SignOut</button></NavLink>
+    <NavLink className="link" to="/sign-out">SignOut</NavLink>
   </>
 )
 
@@ -29,33 +29,17 @@ const alwaysOptions = (
 
 const Nav = ({ user }) => {
 
-  const [navLinkOpen, navLinkToggle] = useState(false)
-  
-
-  const handleNavLinksToggle = () => {
-    navLinkToggle(!navLinkOpen)
-  }
-
-  const renderClasses = () => {
-    let classes = 'links'
-    if (navLinkOpen) {
-      classes += 'active'
-    }
-    return classes 
-  }
-
   return (
     <nav>
-      <div className='nav'>
-        <NavLink className="logo" to="/"><img src='https://i.imgur.com/3i8g2OC.jpg' alt='logo' /></NavLink>
-        {user && <div className="link-greeting">Hello, {user.firstName}.</div>}
-        <div className={renderClasses()}>
-          {alwaysOptions} {user ? authenticatedOptions : unauthenticatedOptions}
-        </div>
-        <div onClick={handleNavLinksToggle} className='hamburgerToggle' >
-          <i  className='fas fa-bars fa-lg'></i>
-        </div>
-      </div>
+      <NavLink className="logo" to="/"><img src='https://i.imgur.com/3i8g2OC.jpg' alt='logo' /></NavLink>
+      {user && <div className="link-greeting">Welcome to our bike shop, {user.firstName}.</div>}
+        <div id="hamnav">
+          <label for="hamburger">&#9776;</label>
+          <input type="checkbox" id="hamburger"/>
+          <div id="hamitems">
+              {alwaysOptions} {user ? authenticatedOptions : unauthenticatedOptions}
+          </div>
+       </div>
     </nav>
   )
 }
