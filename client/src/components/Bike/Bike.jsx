@@ -9,7 +9,7 @@ const Bike = (props) => {
             <img className="bike-image" src={props.imageURL} alt={props.model} />
             <div className='bike-text'>
               <div className="bike-model">{props.model}</div>
-              <div className="bike-price">{`${props.price}`}</div>
+              <div className="bike-price">${`${props.price}`}</div>
             </div>
             </Link>
         </div>
