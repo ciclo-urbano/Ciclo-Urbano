@@ -29,12 +29,9 @@ const Bikes = (props) => {
 
   const handleSort = type => {
     setSortType(type)
-
-    // console.log(type.alt, type.value)
     switch (type) {
       case "below-200":
         setQueriedBikes(priceLow(queriedBikes))
-        // console.log(type)
         break
       case "200-400":
         setQueriedBikes(priceMed(queriedBikes))
@@ -57,14 +54,14 @@ const Bikes = (props) => {
   const handleSubmit = event => event.preventDefault()
 
   const bikesJSX = queriedBikes.map((bike, index) =>
-    <Bike _id={bike._id} model={bike.model} imageURL={bike.imageURL} price={bike.price} key={index} />
+    <Bike _id={bike._id} make={bike.make} model={bike.model} imageURL={bike.imageURL} price={bike.price} key={index} />
   )
 
   return (
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes}/>
-      <Link to={`/${props.user.userID}/add-bike`}>Add Bike</Link>
+      <Link className="add-bike" to={`/${props.user.userID}/add-bike`}>Add Bike</Link>
       <div className="bikes">
         {bikesJSX}
       </div>
