@@ -11,10 +11,12 @@ const bikeSchema = new Schema(
     price: { type: Number, required: true },
     size: { type: String, required: true },
     imageURL: { type: String, required: true },
-    isSold: { type: Boolean, required: false },
-    onHold: { type: Boolean, required: false },
+    isSold: { type: Boolean},
+    onHold: { type: Boolean},
+    builderID: { type: Schema.Types.ObjectId, ref: 'User'},
+    checkerID: { type: Schema.Types.ObjectId, ref: 'User'}
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Bike", bikeSchema);
+module.exports = mongoose.model("Bike", bikeSchema, "bikes");

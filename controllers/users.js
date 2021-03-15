@@ -43,7 +43,8 @@ const signIn = async (req, res) => {
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         email: user.email,
-        firstName: user.firstName
+        firstName: user.firstName,
+        userID: user._id
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       res.status(201).json({ token });
@@ -70,8 +71,34 @@ const verify = async (req, res) => {
 // challenge mode
 // const changePassword = async (req, res) => {};
 
+//todo add checked bikes and route
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.find().populate('bikesBuilt');
+    res.json(users);
+} catch (error) {
+    res.status(500).json({ error: error.message });
+}
+};
+
+const getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).populate('bikesBuilt');
+    res.json(user);
+} catch (error) {
+    res.status(500).json({ error: error.message });
+}
+};
+
+
+
+
+
+
 module.exports = {
   signUp,
   signIn,
   verify,
+  getUsers,
+  getUser
 };

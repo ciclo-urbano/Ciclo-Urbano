@@ -23,7 +23,7 @@ function BikeDetail(props) {
   }
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className='bike-detail'>
         <img className='bike-detail-image' src={bike.imageURL} alt={bike.model} />
         <div className='detail-text'>
