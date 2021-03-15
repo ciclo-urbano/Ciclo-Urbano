@@ -1,7 +1,7 @@
 .form-parent {
   display: flex;
   justify-content: center;
-  padding: 0 32px;
+  padding: 16px 32px;
 }
 
 .search-filter {
