@@ -86,5 +86,6 @@ a.logo{
   .link-greeting {
     font-size: 30px;
     margin-left: 12vw;
+    margin-top: 2vh;
   }
 }

@@ -26,6 +26,7 @@
     width: 100vw;
     height: 300px;
     object-fit: cover;
+    object-position: 50% 50%;
     margin: 0 auto;
     align-items: center;
   }
