@@ -4,7 +4,6 @@
   flex-direction: row;
   text-align: left;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  justify-content: flex-start;
   min-height: 100vh;
 }
 
@@ -14,6 +13,7 @@
 }
 
 .detail-text {
+  margin-top: 50px;
   flex: 1 0 auto;
 }
 
@@ -26,8 +26,8 @@
 }
 
 .bike-detail-model {
-  font-size: 2em;
-  font-weight: 777;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .bike-detail-price {
@@ -73,7 +73,6 @@
   
     .bike-detail-image {
       max-width: 100vw;
-      max-height: 60vh;
     }
   
     .detail-text {
@@ -107,7 +106,6 @@
 
   .bike-detail-image {
     max-width: 100vw;
-    max-height: 60vh;
   }
 
   .detail-text {

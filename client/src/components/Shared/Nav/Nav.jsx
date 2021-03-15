@@ -15,7 +15,7 @@ const unauthenticatedOptions = (
       SignUp
     </NavLink>
     <NavLink className="link" to="/sign-in">
-      <button className="logButton">SignIn</button>
+      SignIn
     </NavLink>
   </>
 );
