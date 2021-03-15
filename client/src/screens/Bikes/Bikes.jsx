@@ -28,10 +28,16 @@ const Bikes = (props) => {
   }
 
   const handleSort = type => {
-    setSortType(type)
-    switch (type) {
-      case "below-200":
-        setQueriedBikes(priceLow(allBikes))
+    setSortType(type.alt)
+
+    console.log(sortType)
+    // console.log(type.alt, type.value)
+    switch (type.alt, type.value) {
+      case "price":
+        // console.log(type)
+        if (type.value === "under-200") {
+          setQueriedBikes(priceLow(allBikes))
+        }
         break
       case "200-400":
         setQueriedBikes(priceMed(allBikes))
@@ -39,8 +45,12 @@ const Bikes = (props) => {
       case "over-400":
         setQueriedBikes(priceHigh(allBikes))
         break
+      case "brand":
+        // setQueriedBikes(brandName(type.alt, queriedBikes))
+        console.log(type)
+        break
     }
- }
+}
 
   const handleSubmit = event => event.preventDefault()
 
@@ -51,7 +61,7 @@ const Bikes = (props) => {
   return (
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort}/>
+      <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes}/>
       <Link to='/add-bike'>Add Bike</Link>
       <div className="bikes">
         {bikesJSX}
