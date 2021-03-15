@@ -54,7 +54,7 @@ a.logo{
   text-align: center;
 }
 #hamitems a:hover {
-  background: #401408;
+  color: #FCF002;
 }
 
 /* [ON SMALL SCREENS] */
@@ -63,7 +63,7 @@ a.logo{
   #hamnav label { 
     display: inline-block; 
     color: white;
-    background: #a02620;
+    background: #95B1AE;
     font-style: normal;
     font-size: 1.2em;
     padding: 10px;
