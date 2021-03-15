@@ -16,6 +16,8 @@ nav img{
   height: 70px;
   width: 70px;
   margin-left: 5px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 nav img:hover{
@@ -78,4 +80,11 @@ a.logo{
   /* Toggle Show/Hide Menu */
   #hamitems { display: none; }
   #hamnav input:checked ~ #hamitems { display: block; }
+}
+
+@media screen and (max-width: 480px){
+  .link-greeting {
+    font-size: 30px;
+    margin-left: 12vw;
+  }
 }

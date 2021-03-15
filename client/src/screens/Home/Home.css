@@ -43,3 +43,33 @@
   font-family: "Roboto";
   text-align: center;
 }
+
+@media screen and (max-width: 480px){
+  .welcome-container {
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 400px;
+  }
+  
+  .welcome-picture img {
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
+    object-position: 0 50%;
+  }
+
+  .welcome-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #F7EBE8;
+  }
+
+  .welcome-header p {
+    font-size: 30px;
+    font-family: "Roboto";
+    text-align: center;
+  }
+
+}

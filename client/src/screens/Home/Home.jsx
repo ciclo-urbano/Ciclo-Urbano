@@ -20,7 +20,7 @@ const Home = (props) => {
           </animated.p>
         </div>
       </div>  
-      <p className="featured-header">Bikes ready for a loving home:</p>
+      <p className="featured-header">Ready for a loving home:</p>
       <SimpleSlider />
     </Layout>
   )
