@@ -3,19 +3,24 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  font-family: Roboto;
 }
 
 .add-bike {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 10px;
-}
-
-.add-bike button {
-  background-color: #95B1AE;
-}
-
-a {
+  
+  font-family: Roboto;
   text-decoration: none;
+  width: 72px;
+  color: white;
+  cursor: pointer;
+  background: #054850;
+  font-size: 1rem;
+  padding: 8px;
+  margin: 24px auto;
+  border-radius: 3px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
