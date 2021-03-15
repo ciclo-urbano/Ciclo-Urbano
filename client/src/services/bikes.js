@@ -18,9 +18,9 @@ export const getBike = async id => {
   }
 }
 
-export const createBike = async bike => {
+export const createBike = async (userID, bike) => {
   try {
-      const response = await api.post('/bikes', bike)
+      const response = await api.post(`/${userID}/bikes`, bike)
       return response.data
   } catch (error) {
       throw error

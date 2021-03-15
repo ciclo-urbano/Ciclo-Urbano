@@ -1,8 +1,18 @@
 import { useState, useEffect } from 'react';
 import { getBike, updateBike, createBike } from '../../services/bikes.js';
+import { useHistory } from 'react-router-dom';
+
 import './Form.css'
 
 function Form(props) {
+  const [isUpdated, setUpdated] = useState(false);
+  const history = useHistory();
+  
+  if (isUpdated) {
+    history.push('/')
+  }
+  
+  //initialize bike as empty object
   const [bike, setBike] = useState(
     {
       model: '',
@@ -16,7 +26,8 @@ function Form(props) {
       onHold: false,
     }
   )
-
+  
+  //grab the bike if passed, if not set builderID as currently logged in user's ID
   useEffect(() => {
     if (props.id) {
       const fetchBike = async () => {
@@ -24,6 +35,8 @@ function Form(props) {
         setBike(theBike);
       }
       fetchBike();
+    } else {
+      // setBike({ ...bike, builderID: props.user.userID });
     }
   }, [props.id]);
 
@@ -39,16 +52,15 @@ function Form(props) {
     e.preventDefault();
     if (props.id) {
       const theBike = await updateBike(props.id, bike);
-      props.setUpdated(theBike)
+      setUpdated(theBike);
     } else {
-      const theBike = await createBike(bike);
-      console.log(theBike)
-      props.setUpdated(theBike)
+      const theBike = await createBike(props.user.userID,bike);
+      console.log('created', theBike);
+      // setUpdated(theBike);
     }
   }
 
   return (
-    // <div className="bike-form-container">
     <form className="bike-form" onSubmit={handleSubmit}>
       <label htmlFor='Make'>Make</label>
       <input
@@ -124,7 +136,6 @@ function Form(props) {
       />
       <button type='submit' className='submit-button'>{ props.id ? 'Save Changes' : 'Add'}</button>
       </form>
-      // </div>
   )
 }
 
