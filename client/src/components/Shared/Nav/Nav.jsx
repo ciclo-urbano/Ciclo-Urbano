@@ -32,7 +32,7 @@ const Nav = ({ user }) => {
   return (
     <nav>
       <NavLink className="logo" to="/"><img src='https://i.imgur.com/3i8g2OC.jpg' alt='logo' /></NavLink>
-      {user && <div className="link-greeting">Welcome to our bike shop, {user.firstName}.</div>}
+      {user && <div className="link-greeting">Welcome, {user.firstName}.</div>}
         <div id="hamnav">
           <label for="hamburger">&#9776;</label>
           <input type="checkbox" id="hamburger"/>
