@@ -4,7 +4,7 @@
 }
 
 .carousel img {
-  width: 40vw;
+  width: 500px;
   height: 300px;
   object-fit: cover;
   object-position: 50% 50%;
@@ -29,5 +29,6 @@
     object-position: 50% 50%;
     margin: 0 auto;
     align-items: center;
+    border-bottom: 2px solid black;
   }
 }
