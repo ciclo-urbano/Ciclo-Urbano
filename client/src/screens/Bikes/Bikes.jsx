@@ -66,7 +66,7 @@ const Bikes = (props) => {
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes}/>
-      <button className="filter-button" onClick={handleClear}>Clear All</button>
+      <button className="filter-button" onClick={handleClear}>Clear All Filters</button>
       <div className="bikes">
         {bikesJSX}
       </div>
