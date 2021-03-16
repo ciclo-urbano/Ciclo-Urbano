@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './Bikes.css';
 import Bike from '../../components/Bike/Bike';
 import Search from '../../components/Search/Search';
