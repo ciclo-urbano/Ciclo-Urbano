@@ -61,7 +61,7 @@ const Bikes = (props) => {
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes}/>
-      <Link className="add-bike" to={`/${props.user.userID}/add-bike`}>Add Bike</Link>
+      {/* <Link className="add-bike" to={`/${props.user.userID}/add-bike`}>Add Bike</Link> */}
       <div className="bikes">
         {bikesJSX}
       </div>
