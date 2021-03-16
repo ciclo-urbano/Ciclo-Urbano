@@ -51,3 +51,12 @@ margin-bottom: 10vh;
   background:#EDDD53; 
   color: #5362ED;
 }
+
+@media screen and (max-width: 480px){
+  
+  .bike-form {
+    max-width: 420px;
+  }
+  
+    
+  }
