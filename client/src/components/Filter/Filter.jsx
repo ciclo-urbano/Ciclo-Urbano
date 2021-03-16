@@ -2,7 +2,7 @@ import "./Filter.css";
 
 function Filter(props) {
   const handleChange = (e) => {
-    e.target.checked ? 
+    e.target.checked ?
       props.onChange(e.target.value) :
       props.setQueriedBikes(props.bikes)
     // console.log(e.target)
@@ -38,11 +38,11 @@ function Filter(props) {
             />
           </div>
         </form>
-        </div>
-        <div className="filter-type">
+      </div>
+      <div className="filter-type">
         <p className="filter-header">Category:</p>
         <form className="search-filter" onSubmit={props.handleSubmit}>
-            <div className="checkbox">
+          <div className="checkbox">
             <label htmlFor="Commuter">Commuter</label>
             <input
               type="checkbox"
@@ -66,9 +66,9 @@ function Filter(props) {
               onChange={handleChange}
             />
           </div>
-          </form>
-          </div>
-        <div className='filter-type'>
+        </form>
+      </div>
+      <div className='filter-type'>
         <p className="filter-header">Popular brands:</p>
         <form className="search-filter" onSubmit={props.handleSubmit}>
           <div className="checkbox">
@@ -95,9 +95,9 @@ function Filter(props) {
               onChange={handleChange}
             />
           </div>
-          </form>
-        </div>
-        {/* <button
+        </form>
+      </div>
+      {/* <button
           className="clear-button"
           onClick={props.setQueriedBikes(props.bikes)}
         >Clear All</button> */}

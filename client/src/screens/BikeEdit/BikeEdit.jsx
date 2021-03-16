@@ -16,20 +16,18 @@ function BikeEdit(props) {
       setBike(theBike);
     };
     fetchBike();
-
-    // Image upload could go here if/else
   }, [id]);
 
   return (
     <Layout user={props.user}>
       <div className="form-background" style={{ backgroundImage: `url(${background})` }}>
         <div className="image-box">
-        {bike ? (
-          <img src={bike.imageURL} alt="bike" className="edit-image" />
-        ) : (
-          <h1>Loading...</h1>
+          {bike ? (
+            <img src={bike.imageURL} alt="bike" className="edit-image" />
+          ) : (
+            <h1>Loading...</h1>
           )}
-          </div>
+        </div>
         <Form id={id} />
       </div>
     </Layout>

@@ -1,6 +1,13 @@
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
 
+// <<<<<<< HEAD
+// const authenticatedOptions = (
+//   <>
+    
+//     <NavLink className="link" to="/sign-out">
+//       SignOut
+// =======
 const Nav = ({ user }) => {
 
   let authenticatedOptions = null;
@@ -9,6 +16,7 @@ const Nav = ({ user }) => {
       <>
         <NavLink className="add-bike" to={`/${user.userID}/add-bike`}>
           Add Bike
+
     </NavLink>
         <NavLink className="link" to="/sign-out">
           SignOut
