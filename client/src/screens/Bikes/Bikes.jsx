@@ -52,6 +52,11 @@ const Bikes = (props) => {
 
   const handleSubmit = event => event.preventDefault()
 
+  const handleClear = event => {
+    document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+    setQueriedBikes(allBikes);
+  }
+
   const bikesJSX = queriedBikes.map((bike, index) =>
     <Bike _id={bike._id} make={bike.make} model={bike.model} imageURL={bike.imageURL} price={bike.price} key={index} />
   )
@@ -59,9 +64,8 @@ const Bikes = (props) => {
   return (
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes} />
-
-
+      <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes}/>
+      <button className="filter-button" onClick={handleClear}>Clear All Filters</button>
       <div className="bikes">
         {bikesJSX}
       </div>
