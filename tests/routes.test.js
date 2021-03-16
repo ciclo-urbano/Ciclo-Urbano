@@ -96,12 +96,12 @@ describe("Test the express routes for our bikes endpoints", () => {
       expect(res.body).toHaveProperty("_id");
       done();
     }),
-  it("should delete a bike", async (done) => {
-    const res = await request(app).del(`/api/bikes/${bikeId}`);
-    expect(res.statusCode).toEqual(200);
-    expect(res.text).toEqual("Bicycle deleted, with extreme prejudice");
-    done();
-  });
+    it("should delete a bike", async (done) => {
+      const res = await request(app).del(`/api/bikes/${bikeId}`);
+      expect(res.statusCode).toEqual(200);
+      expect(res.text).toEqual("Bicycle deleted, with extreme prejudice");
+      done();
+    });
 });
 
 afterAll(async () => {

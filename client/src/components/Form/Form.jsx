@@ -7,11 +7,11 @@ import './Form.css'
 function Form(props) {
   const [isUpdated, setUpdated] = useState(false);
   const history = useHistory();
-  
+
   if (isUpdated) {
     history.push('/')
   }
-  
+
   //initialize bike as empty object
   const [bike, setBike] = useState(
     {
@@ -26,7 +26,7 @@ function Form(props) {
       onHold: false,
     }
   )
-  
+
   //grab the bike if passed, if not set builderID as currently logged in user's ID
   useEffect(() => {
     if (props.id) {
@@ -54,7 +54,7 @@ function Form(props) {
       const theBike = await updateBike(props.id, bike);
       setUpdated(theBike);
     } else {
-      const theBike = await createBike(props.user.userID,bike);
+      const theBike = await createBike(props.user.userID, bike);
       console.log('created', theBike);
       // setUpdated(theBike);
     }
@@ -134,8 +134,8 @@ function Form(props) {
         required
         onChange={handleChange}
       />
-      <button type='submit' className='submit-button'>{ props.id ? 'Save Changes' : 'Add'}</button>
-      </form>
+      <button type='submit' className='submit-button'>{props.id ? 'Save Changes' : 'Add'}</button>
+    </form>
   )
 }
 

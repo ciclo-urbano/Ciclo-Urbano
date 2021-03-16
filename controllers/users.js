@@ -76,18 +76,18 @@ const getUsers = async (req, res) => {
   try {
     const users = await User.find().populate('bikesBuilt');
     res.json(users);
-} catch (error) {
+  } catch (error) {
     res.status(500).json({ error: error.message });
-}
+  }
 };
 
 const getUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id).populate('bikesBuilt');
     res.json(user);
-} catch (error) {
+  } catch (error) {
     res.status(500).json({ error: error.message });
-}
+  }
 };
 
 
