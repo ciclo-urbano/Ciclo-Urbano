@@ -19,7 +19,7 @@ const Nav = ({ user }) => {
 
     </NavLink>
         <NavLink className="link" to="/sign-out">
-          SignOut
+          Sign Out
     </NavLink>
       </>
     );
@@ -28,10 +28,10 @@ const Nav = ({ user }) => {
 const unauthenticatedOptions = (
   <>
     <NavLink className="link" to="/sign-up">
-      SignUp
+      Sign Up
     </NavLink>
     <NavLink className="link" to="/sign-in">
-      SignIn
+      Sign In
     </NavLink>
   </>
 );
