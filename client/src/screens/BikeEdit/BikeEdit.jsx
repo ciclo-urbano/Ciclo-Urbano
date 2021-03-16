@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getBike } from "../../services/bikes";
 import "./BikeEdit.css";
+import background from '../../img/bicycle-pegboard.jpg';
 
 function BikeEdit(props) {
   const { id } = useParams();
@@ -21,7 +22,7 @@ function BikeEdit(props) {
 
   return (
     <Layout user={props.user}>
-      <div className="form-background">
+      <div className="form-background" style={{ backgroundImage: `url(${background})` }}>
         <div className="image-box">
         {bike ? (
           <img src={bike.imageURL} alt="bike" className="edit-image" />
