@@ -1,5 +1,59 @@
 .form-background {
-  background-image: url("http://localhost:3001/img/bicycle-pegboard.jpg");
+  /* background-image: url("http://localhost:3001/img/bicycle-pegboard.jpg"); */
   background-size: cover;
   padding: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: flex-start;
+}
+
+.image-box {
+  flex: 1 0 auto;
+  max-width: 40vw;
+  display:flex;
+}
+
+
+.edit-image {
+  max-width: 35vw;
+  max-height: 60vh;
+  margin-top: 10vh;
+  position: fixed;
+  left: 10w;
+
+  /* border: 1em solid yellow; */
+  border: 20px solid transparent;
+  border-image: linear-gradient(to bottom, #EDDD53 0%, #5362ED 100%);
+  border-image-slice: 1;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+@media screen and (max-width: 1024px){
+
+.edit-image {
+  position: inherit;
+  left:auto;
+}
+
+}
+
+@media screen and (max-width: 480px){
+  
+.form-background {
+flex-direction: column;
+align-items: center;
+}
+
+.image-box,
+.edit-image {
+  flex-direction: column;
+  margin: 2vw ;
+align-items: center;
+  max-width: 80vw;
+  /* margin:10px  auto; */
+}
+
+  
 }

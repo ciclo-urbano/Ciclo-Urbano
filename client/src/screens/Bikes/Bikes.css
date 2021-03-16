@@ -6,7 +6,7 @@
   font-family: Roboto;
 }
 
-.add-bike {
+/* .add-bike {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -21,5 +21,5 @@
   margin: 24px auto;
   border-radius: 3px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
+  transition: all 0.3s ease; 
+}*/

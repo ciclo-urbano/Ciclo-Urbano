@@ -1,13 +1,21 @@
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
 
-const authenticatedOptions = (
-  <>
-    <NavLink className="link" to="/sign-out">
-      SignOut
+const Nav = ({ user }) => {
+
+  let authenticatedOptions = null;
+  if (user) {
+   authenticatedOptions = (
+      <>
+        <NavLink className="add-bike" to={`/${user.userID}/add-bike`}>
+          Add Bike
     </NavLink>
-  </>
-);
+        <NavLink className="link" to="/sign-out">
+          SignOut
+    </NavLink>
+      </>
+    );
+  };
 
 const unauthenticatedOptions = (
   <>
@@ -41,7 +49,6 @@ const alwaysOptions = (
   </>
 );
 
-const Nav = ({ user }) => {
   return (
     <nav>
       <NavLink className="logo" to="/">
