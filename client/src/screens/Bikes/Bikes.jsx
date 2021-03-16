@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './Bikes.css';
 import Bike from '../../components/Bike/Bike';
 import Search from '../../components/Search/Search';
@@ -49,7 +48,7 @@ const Bikes = (props) => {
       default:
         setQueriedBikes(allBikes)
     }
-}
+  }
 
   const handleSubmit = event => event.preventDefault()
 
@@ -60,10 +59,7 @@ const Bikes = (props) => {
   return (
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes}/>
-
-
-      {/* <Link className="add-bike" to={`/${props.user.userID}/add-bike`}>Add Bike</Link> */}
+      <Filter onSubmit={handleSubmit} bikes={allBikes} onChange={handleSort} setQueriedBikes={setQueriedBikes} />
 
 
       <div className="bikes">

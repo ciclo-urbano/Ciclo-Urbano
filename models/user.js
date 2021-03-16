@@ -8,7 +8,7 @@ const userSchema = new Schema(
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     bikesBuilt: [{ type: Schema.Types.ObjectId, ref: 'Bike' }],
-    bikesChecked: [{type: Schema.Types.ObjectId, ref: 'Bike'}]
+    bikesChecked: [{ type: Schema.Types.ObjectId, ref: 'Bike' }]
   },
   { timestamps: true }
 );
